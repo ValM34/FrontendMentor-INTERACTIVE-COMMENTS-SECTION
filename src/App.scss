@@ -1,0 +1,14 @@
+@import './assets/style/base/reset';
+@import './assets/style/base/colors';
+@import './assets/style/base/font';
+@import './assets/style/base/mediaQueries';
+@import './assets/style/base/containers';
+@import './assets/style/components/post';
+@import './assets/style/components/modal';
+@import './assets/style/components/form';
+
+.main-content {
+  padding: 20px;
+  background-color: $lightGray;
+  min-height: 100vh;
+}

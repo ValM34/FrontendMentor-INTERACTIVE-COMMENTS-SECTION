@@ -1,8 +1,11 @@
 import React from 'react'
-import data from '../../data.json';
 import PostReply from './PostReply';
 import Answering from './Answering';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReply, faTrash, faPen } from '@fortawesome/free-solid-svg-icons';
+import { DataContext } from '../contextAPI/DataContext';
+import data from '../../data.json';
 
 export default function Post({ comment }) {
   const userId = "juliusomo";
@@ -17,6 +20,8 @@ export default function Post({ comment }) {
   const edit = () => {
     setEditing(true);
   }
+
+  const test = useContext(DataContext);
 
   return (
     <div className="message-and-replies-container">
@@ -52,14 +57,14 @@ export default function Post({ comment }) {
                 <button className="btn-edit-send">SEND</button>
               ) : (
                 <>
-                  <button className="btn-delete">Delete</button>
-                  <button onClick={edit} className="btn-edit">Edit</button>
+                  <button className="btn-delete"><FontAwesomeIcon icon={faTrash} /> Delete</button>
+                  <button onClick={edit} className="btn-edit"><FontAwesomeIcon icon={faPen} /> Edit</button>
                 </>
               )}
             </div>
           ) : (
             <button onClick={response} className="message-reply">
-              Reply
+              <FontAwesomeIcon icon={faReply} /> Reply
             </button>
           )}
         </div>

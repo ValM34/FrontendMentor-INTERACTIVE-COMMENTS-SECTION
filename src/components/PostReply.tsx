@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import Answering from './Answering';
 import ModalDelete from './ModalDelete';
+import { DataContext } from '../contextAPI/DataContext';
+import data from '../../data.json';
 
 export default function PostReply({ reply, userId, user }) {
 
